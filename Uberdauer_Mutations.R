@@ -8,7 +8,10 @@ library(here)
 ##### Read in data #####
 WGS_SNP <- read_csv(here("WGS_uberdauer_all_SNP.csv")) #Need to change location on other computers
 
-WGS_indel <- read_csv(here("WGS_uberdauer_all_indels.csv"))
+WGS_indel_1 <- read_csv(here("WGS_uberdauer_all_indels_1.csv"))
+WGS_indel_2 <- read_csv(here("WGS_uberdauer_all_indels_2.csv")) #Indels file was too large for GitHub - split into two
+
+WGS_indel <- full_join(WGS_indel_1, WGS_indel_2) #Joining the two indel files
 
 ##### How to see unique values ######
 
